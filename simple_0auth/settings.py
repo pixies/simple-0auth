@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social_django',
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'simple_0auth.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), '/Users/cleyton/Projetos/simple-0auth-src/simple_0auth/account/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -134,8 +135,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_URL = '/account/login/'
+LOGIN_REDIRECT_URL = '/account/home/'
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '123779673392-794nunkgcf5flrhnlg3jlv05apnlueiq.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'j2IugaPsSlvis4Eba5SD0cqA' #env('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
